@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <script>
+
+    //  let c = [1,2,3,4];
+    //  let b = [...c];
+    //  b[1]= 5;
+    //  console.log(c);
+    //  console.log(b);
+
+
+      function set(a){
+      const flats = [].concat(...a);
+
+      const set ={};
+      flats.forEach(v=>{
+        set[v]= (set[v] || 0)+1;
+      });
+      const diff = Object.keys(set).filter(k=> set[k] === 1);
+      return diff.map(Number);
+      }
+     
+      const arr = [[2,3,4],[1,3,4],[1,3,5]];
+      const res = set(arr);
+      console.log(res);
+    </script>
+</body>
+</html>

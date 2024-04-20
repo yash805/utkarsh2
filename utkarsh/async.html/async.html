@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let todos = (res, callback) => {
+        let request = new XMLHttpRequest();
+
+        request.addEventListener("readystatechange", () => {
+          // console.log(request,request.readyState)
+          if (request.readyState === 4 && request.status === 200) {
+            // console.log(request.responseText);
+            let data = JSON.parse(request.responseText);
+            callback(undefined, data);
+          } else if (request.readyState === 4) {
+            // console.log("data could not fetch");
+            callback("Data could not fetch", undefined);
+          }
+        });
+        // set up the request
+        request.open("Get", res);
+
+        // sending the request
+        request.send();
+      };
+
+      todos("data.json", (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(data);
+        }
+        todos("get.json", (err, data) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(data);
+          }
+          todos("set.json", (err, data) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(data);
+            }
+          });
+        });
+      });
+
+      // 0. UNSENT Client has been created . open() no called yet.
+      // 1 Open() has been called
+      // 2 HEADERS_RECIVED send() has been called
+      // 3 responseText holds partial data
+      //  4. Done the operation is complete
+    </script>
+  </body>
+</html>
