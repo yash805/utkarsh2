@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+//    oop
+//we can not use arrow function as constructor
+// new keyword to call constructor
+// "this"
+
+
+// let Car = function(color, model){
+//    this.x = color;
+//    this.y = model;
+//    this.get= function (){
+//     console.log("good")
+//    }
+   
+// }
+// Car.prototype.login  = function(){
+//     console.log("login");
+// }
+// Car.prototype.company = "Honda"
+
+// console.log(Car.prototype)
+// let instance = new Car("Blue",2022);
+// let set = new Car("Red",2020)
+
+
+// instance.login()
+
+// console.log(instance._proto_);
+
+
+
+
+// ES6 Classes
+
+// class declration
+
+class Car{
+    constructor(color,model){
+        this.color = color;
+        this.model = model; 
+    }
+    logins(){
+        console.log("hello world")
+    }
+
+
+    set change(color){
+        console.log(this.color=color);
+    }
+    
+    get _logins(){
+        return` color of bike is ${this.color} and it smode is ${this.model}`
+    }
+}
+
+Car.prototype.break = function(){
+    console.log("break fail");
+}
+console.log(Car.prototype)
+let hon = new Car("Red",2022)
+console.log(hon);
+hon.break();
+hon._logins;
+hon.change = "blue"
+console.log(hon);
+console.log(hon._logins)  
+
+
+// classes are not hoisted
+// classes are laso first class citizens
+// classes are executed in strict mode
+
+
+// Getters and setters
+    </script>
+</body>
+</html>
