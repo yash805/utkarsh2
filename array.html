@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // concat method
+        // let arr = ["a","b","c"];
+        // let arr2 = ["d","e"];  //["a","b","c","d","e"];
+        // let set = arr + arr2;
+        // let set = arr.concat(arr2);
+        // console.log(set);
+
+        // let set = "hello";
+        // let get = "world";
+        // let pet = set + " "+ get;
+
+        // let pet = set.concat(get);
+        // let pet = `${set} ${get}`;
+        // console.log(pet);  
+
+        // splice method
+        // array.splice(start,dletecount,item1.....)
+        // original array mutate
+
+    //     let arr = ['bike',"ship","fruits","good"];
+
+    //   arr.splice(2, 2, "cars","dance");
+    //   console.log(arr);
+
+
+    // let arr = [1,2,3,4,5,6,7,8,9,10];
+    // let res = arr.slice(0, arr.length, 2);
+    // console.log(res);
+
+    
+    // findIndex method
+    
+    // let arr = [2,4,5,7,9];
+    // let res = arr.findIndex(a=>{
+    //     return  a > 10;
+    // })
+    // console.log(res);
+
+    // some method
+
+    // let arr = [3,5,7,6,2];
+    // let set = arr.every(a=>{
+    //     return a > 1;
+    // })
+    // console.log(set);
+
+
+    // flatMap method
+
+//     let cart = [
+//         {
+//             name:"Mobile",
+//             qty:2,
+//             price: 1000
+//         },{
+//             name:"Ipad",
+//             qty:1,
+//             price: 500
+//         }
+//     ]
+
+
+// let set = cart.flatMap(a=>{
+//     if(a.name=="Mobile"){
+//         return [a,{
+//             name:"Cover",
+//             qty:1,
+//             price:0
+//         }]
+
+//     }else{
+//         return [a];
+//     }
+// })
+// console.log(set);
+
+// sort method
+// let arr = [2,4,-1,-3,7,3,5,9];
+// console.log(arr.sort());
+// if a-b < 0 =< a < b=>(keep order same)
+// if a-b > 0 a>b => (switch the order)
+
+// arr.sort((a,b)=>{
+//     return a-b;
+// })
+// console.log(arr);
+
+
+
+function hat(arr){
+const set ={};
+
+for(let i of arr){
+    const get = i.split("").sort().join("");
+    if(!set[get]){
+        set[get] = [i];
+    }else{
+        set[get].push(i);
+    }
+   
+}
+return Object.values(set);
+}
+console.log(hat(["eat","tea","tan","ate","nat","bat"]));
+
+
+// let obj ={a:1,b:2,c:3}
+// const val = Object.values(obj);
+// console.log(val); 
+
+
+    </script>
+</body>
+</html>

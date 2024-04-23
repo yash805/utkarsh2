@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+// console.log(localStorage);
+// set item
+
+// localStorage.setItem("school","RPS")
+// console.log(localStorage)
+
+// getitem
+// console.log(localStorage.getItem("school"))
+
+
+let cars = [
+    {color:"red",name:"nexon"},
+    {color:"green",name:"punch"},
+]
+let str = JSON.stringify(cars);
+console.log(str);
+localStorage.setItem("cars",str)
+console.log(localStorage)
+
+// get stored
+
+let obj = localStorage.getItem("cars");
+let hat = JSON.parse(obj);
+console.log(hat);
+
+
+
+
+    </script>
+</body>
+</html>
